@@ -1,0 +1,24 @@
+# Training configuration
+training:
+  batch_size: 32
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  max_epochs: 1000
+  patience: 20
+  val_split: 0.1
+
+# Model configuration
+model:
+  hidden_dims: [1024, 512, 256]
+  dropout_rate: 0.1
+
+# Data configuration
+data:
+  data_file: "data/data.npz"
+  stats_file: "data/cond_stats.npz"
+
+# Evaluation configuration
+evaluation:
+  safety_threshold_deg: 10.0
+  postprocess_window: 11
+  postprocess_polyorder: 2
