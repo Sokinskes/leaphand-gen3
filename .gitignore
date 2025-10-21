@@ -43,13 +43,17 @@ coverage.xml
 data/
 !data/.gitkeep
 
-# Experiment results
+# Model checkpoints and ONNX files (too large for git)
+*.pth
+*.onnx
 runs/
 !runs/.gitkeep
 
-# Videos
-videos/
-!videos/.gitkeep
+# Experiment results
+evaluation_results_v4/
+benchmark_results_v4/
+!evaluation_results_v4/.gitkeep
+!benchmark_results_v4/.gitkeep
 
 # Logs
 *.log
