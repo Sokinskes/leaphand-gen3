@@ -12,6 +12,8 @@ from .models.planner_v4 import (
     DiffusionEncoder,
     UnifiedHandModel
 )
+from .data.temporal_loader import TemporalLeapHandDataset
+from .utils.multi_gpu_training import MultiGPUTrainer
 
 __version__ = "4.0.0"
 __all__ = [
@@ -20,5 +22,7 @@ __all__ = [
     "SinusoidalPositionalEncoding",
     "MemoryGatedAttention",
     "DiffusionEncoder",
-    "UnifiedHandModel"
+    "UnifiedHandModel",
+    "TemporalLeapHandDataset",
+    "MultiGPUTrainer"
 ]

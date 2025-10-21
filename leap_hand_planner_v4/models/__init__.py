@@ -1,7 +1,7 @@
-"""LeapHand Planner V4 Package.
+"""LeapHand Planner V4 Models Package.
 
-V4 Architecture: Diffusion-Transformer Hybrid with Memory Gates
-for dexterous manipulation planning across multiple robotic hands.
+Contains the core Diffusion-Transformer hybrid model with memory gates
+for dexterous manipulation planning.
 """
 
 from .planner_v4 import (
@@ -13,7 +13,6 @@ from .planner_v4 import (
     UnifiedHandModel
 )
 
-__version__ = "4.0.0"
 __all__ = [
     "LeapHandPlannerV4",
     "DEFAULT_HAND_CONFIGS",
