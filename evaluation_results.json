@@ -1,0 +1,776 @@
+{
+  "mae": 0.008595331571996212,
+  "rmse": 0.01110196582333689,
+  "max_error": 0.11643540859222412,
+  "per_joint_mae": [
+    0.006987320724874735,
+    0.008228558115661144,
+    0.008015189319849014,
+    0.008145908825099468,
+    0.007820545695722103,
+    0.008572414517402649,
+    0.008155054412782192,
+    0.00870196707546711,
+    0.008669066242873669,
+    0.008630662225186825,
+    0.008350890129804611,
+    0.009106078185141087,
+    0.008364556357264519,
+    0.008218965493142605,
+    0.008306527510285378,
+    0.008890424855053425,
+    0.008793802000582218,
+    0.008627205155789852,
+    0.008539323695003986,
+    0.008444806560873985,
+    0.009036216884851456,
+    0.008799541741609573,
+    0.008631369099020958,
+    0.00899716280400753,
+    0.008066569454967976,
+    0.008426600135862827,
+    0.00798699539154768,
+    0.008566360920667648,
+    0.008719705045223236,
+    0.009291899390518665,
+    0.008526389487087727,
+    0.00890463124960661,
+    0.009493410587310791,
+    0.009100952185690403,
+    0.008494606241583824,
+    0.0086524598300457,
+    0.008534019812941551,
+    0.008362426422536373,
+    0.00887557677924633,
+    0.00854808371514082,
+    0.0085914833471179,
+    0.008693832904100418,
+    0.008836360648274422,
+    0.009017124772071838,
+    0.009261001832783222,
+    0.008694459684193134,
+    0.00907313171774149,
+    0.008894666098058224,
+    0.008454473689198494,
+    0.00815529190003872,
+    0.008809303864836693,
+    0.008025456219911575,
+    0.008163834922015667,
+    0.008906365372240543,
+    0.0085343262180686,
+    0.008714026771485806,
+    0.008916781283915043,
+    0.009063700214028358,
+    0.008797849528491497,
+    0.009013975039124489,
+    0.008642644621431828,
+    0.008629512041807175,
+    0.008031998760998249
+  ],
+  "per_joint_rmse": [
+    0.00912670511752367,
+    0.010600029490888119,
+    0.010355290956795216,
+    0.01053516287356615,
+    0.010104477405548096,
+    0.011049012653529644,
+    0.010533327236771584,
+    0.01121500600129366,
+    0.011166858486831188,
+    0.011103938333690166,
+    0.010771511122584343,
+    0.01171466987580061,
+    0.010790535248816013,
+    0.01061207428574562,
+    0.010736880823969841,
+    0.011482219211757183,
+    0.011304324492812157,
+    0.011126301251351833,
+    0.011006459593772888,
+    0.01088955719023943,
+    0.01162793580442667,
+    0.011346342042088509,
+    0.011126059107482433,
+    0.01160739827901125,
+    0.010427065193653107,
+    0.010878555476665497,
+    0.010322079062461853,
+    0.011036605574190617,
+    0.011229518800973892,
+    0.011968348175287247,
+    0.010990669019520283,
+    0.011442453600466251,
+    0.01224446576088667,
+    0.011731361038982868,
+    0.010980677790939808,
+    0.011139190755784512,
+    0.010999275371432304,
+    0.010789381340146065,
+    0.011410614475607872,
+    0.011018913239240646,
+    0.011135601438581944,
+    0.011215798556804657,
+    0.011369667947292328,
+    0.011616140604019165,
+    0.011914786882698536,
+    0.011202084831893444,
+    0.01167561300098896,
+    0.011470180936157703,
+    0.010907222516834736,
+    0.010548913851380348,
+    0.011351283639669418,
+    0.010392026975750923,
+    0.010585756041109562,
+    0.011518474668264389,
+    0.011012335307896137,
+    0.011227872222661972,
+    0.011529498733580112,
+    0.011681046336889267,
+    0.011389007791876793,
+    0.011652149260044098,
+    0.011141576804220676,
+    0.011161942034959793,
+    0.010449838824570179
+  ],
+  "trajectory_metrics": {
+    "errors": {
+      "mae": 0.008595334365963936,
+      "rmse": 0.010735215619206429,
+      "max_error": 0.11643540859222412
+    },
+    "smoothness": {
+      "velocity_variation": 0.0,
+      "acceleration_variation": 0.0
+    },
+    "efficiency": {
+      "path_length": 0.0,
+      "direct_distance": 0.08520813286304474,
+      "efficiency": 1.0,
+      "total_displacement": 0.08520813286304474
+    },
+    "safety": {
+      "overall_safe": true,
+      "total_violations": 0
+    },
+    "overall_score": 0.8
+  },
+  "safety": {
+    "safe_percentage": 1.0,
+    "violation_details": [
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      },
+      {
+        "safe": true,
+        "info": {
+          "violation_count": 0
+        }
+      }
+    ]
+  },
+  "condition_analysis": {
+    "pose_complexity": {
+      "high_variance_error": 0.08534811437129974,
+      "low_variance_error": 0.08506813645362854,
+      "high_variance_count": 29160,
+      "low_variance_count": 29160
+    },
+    "point_cloud_density": {
+      "high_density_error": 0.08134367316961288,
+      "low_density_error": 0.08899334818124771,
+      "high_density_count": 28858,
+      "low_density_count": 29462
+    }
+  }
+}

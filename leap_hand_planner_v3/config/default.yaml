@@ -1,0 +1,91 @@
+# LeapHand Planner V3 Configuration
+
+# Model architecture
+model:
+  action_dim: 63
+  pose_dim: 3
+  pc_dim: 6144
+  tactile_dim: 100
+  cond_dim: 6247  # pose + pc + tactile
+  seq_len: 10
+  hidden_dim: 512
+  num_heads: 8
+  num_layers: 4
+  dropout: 0.1
+  attention_fusion: true
+  temporal_modeling: true
+  uncertainty_estimation: true
+
+# Training parameters
+training:
+  batch_size: 32
+  learning_rate: 0.0001
+  weight_decay: 0.00001
+  num_epochs: 100
+  patience: 10
+  gradient_clip: 1.0
+  use_ema: true
+  ema_decay: 0.999
+  temporal_weight: 0.7
+  reconstruction_weight: 0.3
+
+# Meta-learning parameters
+meta_learning:
+  algorithm: 'maml'  # 'maml' or 'reptile'
+  inner_lr: 0.01
+  meta_lr: 0.001
+  num_inner_steps: 5
+  num_tasks: 10
+  support_size: 50
+  query_size: 50
+  first_order: true
+
+# Data parameters
+data:
+  data_path: 'data/data.npz'
+  augmentation:
+    noise_std: 0.01
+    time_warp_factor: 0.1
+    dropout_prob: 0.1
+    rotation_range: 0.1
+    translation_range: 0.05
+  temporal:
+    seq_len: 10
+    overlap: 0.5
+
+# Safety and post-processing
+safety:
+  velocity_limit: 2.0
+  acceleration_limit: 5.0
+  joint_limits: [-1.57, 1.57]  # -pi/2 to pi/2
+  collision_threshold: 0.05
+  enable_collision_check: true
+
+postprocessing:
+  smoothing_window: 5
+  velocity_limit: 2.0
+  acceleration_limit: 5.0
+
+# Evaluation parameters
+evaluation:
+  metrics: ['mae', 'rmse', 'smoothness', 'efficiency', 'safety']
+  leave_one_out: true
+  num_samples: 1000
+  save_plots: true
+  plot_dir: 'evaluation_plots'
+
+# Inference parameters
+inference:
+  batch_size: 1
+  use_postprocessing: true
+  use_safety_check: true
+  temporal_horizon: 10
+  uncertainty_threshold: 0.1
+  adaptive_safety: true
+
+# Logging and checkpointing
+logging:
+  log_dir: 'runs/leap_hand_v3'
+  checkpoint_freq: 10
+  save_best: true
+  tensorboard: true
