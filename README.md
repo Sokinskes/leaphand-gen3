@@ -72,31 +72,49 @@ python leap_hand_v4_inference.py --model_path leap_hand_v4.onnx
 
 ```
 leaphandgen3/
-├── leap_hand_planner_v1/        # V1: U-Net扩散模型
-│   ├── diffusion_planner.py    # 基础扩散架构
-│   ├── train.py               # 训练脚本
-│   └── README.md              # V1文档
-├── leap_hand_planner_v2/        # V2: 行为克隆
-│   ├── bc_planner.py          # BC架构
-│   ├── train_bc.py           # 训练脚本
-│   └── README.md              # V2文档
-├── leap_hand_planner_v3/        # V3: 多模态Transformer
-│   ├── models/planner_v3.py   # V3核心架构
-│   ├── train_v3.py           # 训练脚本
-│   └── README.md              # V3文档
-├── leap_hand_planner_v4/        # V4: Diffusion-Transformer混合 ⭐
-│   ├── models/planner_v4.py   # V4核心架构
-│   ├── train_v4_single.py    # 单GPU训练
-│   ├── data/temporal_loader.py # 时序数据加载
-│   └── README.md              # V4文档
-├── runs/                        # 实验结果
-├── data_v4/                     # V4预处理数据
-├── benchmark_v4.py             # V4基准测试
-├── evaluate_v4.py              # V4评估框架
-├── export_v4_to_onnx.py        # V4 ONNX导出
-├── leap_hand_v4_inference.py   # V4推理引擎
-├── Dockerfile                  # 部署容器
-└── README.md                   # 本文件
+├── scripts/                    # 🆕 工具脚本目录
+│   ├── preprocess_data.py     # 通用数据预处理
+│   ├── preprocess_v4_data.py  # V4数据预处理
+│   ├── video_processor.py     # 视频处理工具
+│   └── push_to_github.sh      # GitHub推送脚本
+├── evaluation/                # 🆕 评估和测试目录
+│   ├── benchmark_v4.py        # V4基准测试
+│   ├── test_basic.py          # 基础测试
+│   ├── test_v3.py             # V3测试
+│   ├── evaluation_report.md   # 评估报告
+│   ├── evaluation_results.json # 评估结果
+│   ├── evaluation_results_v4/ # V4评估结果
+│   └── evaluation_plots/      # 评估图表
+├── deployment/                # 🆕 部署和优化目录
+│   ├── export_v4_to_onnx.py   # ONNX模型导出
+│   ├── leap_hand_v4.onnx      # 导出的ONNX模型
+│   ├── optimized_inference.py # 优化推理引擎
+│   ├── DEPLOYMENT_GUIDE.md    # 部署指南
+│   └── Dockerfile             # Docker配置
+├── leap_hand_planner_v1/      # V1: U-Net扩散模型
+│   ├── diffusion_planner.py   # 基础扩散架构
+│   ├── train.py              # 训练脚本
+│   └── README.md             # V1文档
+├── leap_hand_planner_v2/      # V2: 行为克隆
+│   ├── bc_planner.py         # BC架构
+│   ├── train_bc.py          # 训练脚本
+│   └── README.md             # V2文档
+├── leap_hand_planner_v3/      # V3: 多模态Transformer
+│   ├── models/planner_v3.py  # V3核心架构
+│   ├── train_v3.py          # 训练脚本
+│   └── README.md             # V3文档
+├── leap_hand_planner_v4/      # V4: Diffusion-Transformer混合 ⭐⭐
+│   ├── models/planner_v4.py  # V4核心架构
+│   ├── train_v4.py          # 单GPU训练
+│   ├── utils/multi_gpu_training.py # 多GPU训练支持
+│   └── README.md             # V4文档
+├── data/                      # 数据目录
+├── data_v4/                   # V4预处理数据
+├── runs/                      # 训练结果和模型
+├── videos/                    # 演示视频
+├── train_v4.py               # V4多GPU训练脚本 (高级选项)
+├── requirements.txt           # Python依赖
+└── README.md                  # 本文档
 ```
 
 ## 🚀 快速开始
@@ -104,37 +122,39 @@ leaphandgen3/
 ### V4版本使用 (推荐 - 最新特性)
 ```bash
 # 数据预处理
-python preprocess_v4_data.py
+python scripts/preprocess_v4_data.py
 
 # 训练V4模型 (单GPU)
-python train_v4_single.py
+python leap_hand_planner_v4/train_v4.py
+
+# 训练V4模型 (多GPU - 高级)
+python train_v4.py
 
 # 评估V4模型
-python evaluate_v4.py --checkpoint runs/run_*/best_model.pth
+python leap_hand_planner_v4/evaluate_v4.py --checkpoint runs/run_*/best_model.pth
 
 # 基准测试 (与SOTA方法比较)
-python benchmark_v4.py
+python evaluation/benchmark_v4.py
 
 # ONNX导出和部署
-python export_v4_to_onnx.py --checkpoint runs/run_*/best_model.pth --output leap_hand_v4.onnx
-python leap_hand_v4_inference.py --model_path leap_hand_v4.onnx
+python deployment/export_v4_to_onnx.py --checkpoint runs/run_*/best_model.pth --output deployment/leap_hand_v4.onnx
+python leap_hand_planner_v4/inference_v4.py --model_path deployment/leap_hand_v4.onnx
 
 # Docker部署
-docker build -t leaphand-v4 .
+cd deployment && docker build -t leaphand-v4 .
 docker run -p 8000:8000 leaphand-v4
 ```
 
 ### V3版本使用 (生产稳定)
 ```bash
 # 训练V3模型
-python train_v3.py --data_path data/data.npz --device cuda:0
+python leap_hand_planner_v3/train_v3.py --data_path data/data.npz --device cuda:0
 
 # 评估V3模型
-python evaluate_v3.py --model_path runs/leap_hand_v3/best_model.pth --data_path data/data.npz
+python leap_hand_planner_v3/evaluate_v3.py --model_path runs/leap_hand_v3/best_model.pth --data_path data/data.npz
 
 # 推理演示
-python inference_v3.py --model_path runs/leap_hand_v3/best_model.pth --demo
-python optimized_inference.py --model_path runs/leap_hand_v3/best_model.pth --use_onnx --demo
+python leap_hand_planner_v3/inference_v3.py --model_path runs/leap_hand_v3/best_model.pth --demo
 ```
 
 ### V2版本使用 (快速原型)
@@ -160,7 +180,7 @@ python leap_hand_planner_v1/inference.py
 ### V4版本API (最新推荐)
 ```python
 from leap_hand_planner_v4.models import LeapHandPlannerV4
-from leap_hand_v4_inference import LeapHandV4ONNXInference
+from leap_hand_planner_v4.inference_v4 import LeapHandV4ONNXInference
 
 # PyTorch推理
 model = LeapHandPlannerV4(**config)
@@ -178,7 +198,7 @@ trajectory = model(pose, pointcloud, tactile, language)
 print(f"V4轨迹形状: {trajectory.shape}")  # [1, 10, 63]
 
 # ONNX推理 (部署推荐)
-inference = LeapHandV4ONNXInference('leap_hand_v4.onnx')
+inference = LeapHandV4ONNXInference('deployment/leap_hand_v4.onnx')
 trajectory, latency = inference.generate_trajectory(
     pose.numpy(), pointcloud.numpy(), tactile.numpy()
 )
@@ -187,7 +207,7 @@ print(f"推理延迟: {latency:.3f}s")
 
 ### V3版本API (兼容性)
 ```python
-from inference_v3 import LeapHandInference
+from leap_hand_planner_v3.inference_v3 import LeapHandInference
 
 # 初始化推理引擎
 inference = LeapHandInference('runs/leap_hand_v3/best_model.pth')
@@ -204,10 +224,10 @@ print(f"轨迹形状: {trajectory.shape}")  # [10, 63]
 
 ### 实时控制 (V4)
 ```python
-from leap_hand_v4_inference import LeapHandV4ONNXInference
+from leap_hand_planner_v4.inference_v4 import LeapHandV4ONNXInference
 
 # 创建实时推理引擎
-inference = LeapHandV4ONNXInference('leap_hand_v4.onnx', device='cuda')
+inference = LeapHandV4ONNXInference('deployment/leap_hand_v4.onnx', device='cuda')
 
 # 批量推理 (高吞吐量)
 poses = np.random.randn(32, 3)
