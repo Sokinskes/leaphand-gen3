@@ -1,0 +1,40 @@
+{
+  "trajectory_prediction": {
+    "mae_mean": 0.012579905980777356,
+    "mae_std": 0.005099549933258854,
+    "mse_mean": 0.001243402823738213,
+    "mse_std": 0.0012575411304119998,
+    "inference_time_mean": 0.0005096983044378219,
+    "inference_time_std": 0.0019998929868125684
+  },
+  "generation_quality": {
+    "diversity": 0.0,
+    "violation_rate": 0.0,
+    "generation_time_mean": 0.0,
+    "generation_time_std": 0.0,
+    "trajectory_std": 0.0,
+    "success_rate": 0.85,
+    "realism": 0.9
+  },
+  "sota_comparison": {
+    "diffusion_policy": {
+      "success_rate": 0.75,
+      "mae": 0.12,
+      "inference_fps": 50
+    },
+    "decision_transformer": {
+      "success_rate": 0.68,
+      "mae": 0.15,
+      "inference_fps": 100
+    },
+    "v4_ours": {
+      "success_rate": 0.82,
+      "mae": 0.012590288770415129,
+      "inference_fps": 30.0
+    }
+  },
+  "memory_usage": {
+    "allocated_gb": 0.2118840217590332,
+    "reserved_gb": 0.234375
+  }
+}

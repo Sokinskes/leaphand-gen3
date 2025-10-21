@@ -1,0 +1,9 @@
+{
+  "original_frames": 9720,
+  "sequence_length": 10,
+  "stride": 2,
+  "train_sequences": 3884,
+  "val_sequences": 972,
+  "total_sequences": 4856,
+  "output_dir": "data_v4"
+}

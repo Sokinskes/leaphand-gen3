@@ -1,0 +1,26 @@
+{
+  "num_sequences": 3884,
+  "seq_len": 10,
+  "trajectory_shape": [
+    10,
+    63
+  ],
+  "pose_shape": [
+    10,
+    3
+  ],
+  "pc_shape": [
+    10,
+    6144
+  ],
+  "tactile_shape": [
+    10,
+    100
+  ],
+  "data_types": {
+    "trajectories": "float32",
+    "poses": "float32",
+    "pcs": "float32",
+    "tactiles": "float32"
+  }
+}
